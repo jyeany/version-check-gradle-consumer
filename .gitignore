@@ -1,0 +1,11 @@
+
+# IDE Configs
+.idea/
+.vscode/
+
+# Build Output
+/build
+
+# Gradle Cache
+.gradle/
+
