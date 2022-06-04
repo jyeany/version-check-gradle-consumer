@@ -20,4 +20,9 @@ jobs:
         id: gradle_build
         run: ./gradlew build -i
 
-#      add publish step
+      - name: Publish Package
+        id: publish_calculator_lib
+        run: ./gradlew publishAllPublicationsToGitHubPackagesRepository
+        env:
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_TOKEN: ${{ secrets.PUBLISH_PACKAGES_PAT }}

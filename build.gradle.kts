@@ -2,10 +2,16 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.6.21"
+    `maven-publish`
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+val groupId = "com.example"
+val artifactId = "calculator"
+val versionNumber = "0.0.1"
+
+group = groupId
+version = versionNumber
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -21,5 +27,26 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "11"
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/jyeany/version-check-gradle-consumer")
+            credentials {
+                username = System.getenv("GIHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        register<MavenPublication>(artifactId) {
+            groupId = groupId
+            artifactId = artifactId
+            version = versionNumber
+            from(components["java"])
+        }
+    }
 }
