@@ -26,7 +26,7 @@ jobs:
 
       - name: Print Version Check Changed
         id: version_check_print
-        run: echo " changed ${{ steps.version_check.changed }}" && echo "\n version ${{ steps.version_check.version }}"
+        run: echo "changed ${{ steps.version_check.outputs.changed }}" && echo "version ${{ steps.version_check.outputs.version }}"
 
       - name: Publish Package
         if: steps.version_check.changed == true
