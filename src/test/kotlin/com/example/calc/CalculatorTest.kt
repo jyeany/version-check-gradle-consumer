@@ -37,4 +37,10 @@ class CalculatorTest {
         assertEquals(18, result)
     }
 
+    @Test
+    fun divide_4_by_2() {
+        val result = calculator.divide(4, 2)
+        assertEquals(2, result)
+    }
+
 }
