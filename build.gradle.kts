@@ -36,7 +36,7 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/jyeany/version-check-gradle-consumer")
             credentials {
-                username = System.getenv("GIHUB_ACTOR")
+                username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
             }
         }
