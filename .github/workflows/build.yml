@@ -25,7 +25,7 @@ jobs:
         uses: jyeany/version-check-gradle@0.0.1
 
       - name: Publish Package
-        if: ${{ version_check.changed }}
+        if: ${{ steps.version_check.changed }}
         id: publish_calculator_lib
         run: ./gradlew publish
         env:
