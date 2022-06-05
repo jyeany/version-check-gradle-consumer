@@ -24,6 +24,10 @@ jobs:
         id: version_check
         uses: jyeany/version-check-gradle@0.0.1
 
+      - name: Print Version Check Changed
+        id: version_check_print
+        run: echo ${{ steps.version_check.changed }}
+
       - name: Publish Package
         if: steps.version_check.changed == true
         id: publish_calculator_lib
