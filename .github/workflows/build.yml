@@ -22,7 +22,7 @@ jobs:
 
       - name: Check if Package Version Published
         id: version_check
-        uses: jyeany/version-check-gradle@0.0.7
+        uses: jyeany/version-check-gradle@0.0.8
 
       - name: Print Version Check Changed
         id: version_check_print
