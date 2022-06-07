@@ -31,7 +31,7 @@ jobs:
         run: echo "changed ${{ steps.version_check.outputs.changed }}" && echo "version ${{ steps.version_check.outputs.version }}"
 
       - name: Publish Package
-        if: steps.version_check.outputs.changed
+        if: steps.version_check.outputs.changed == 'true'
         id: publish_calculator_lib
         run: ./gradlew publish
         env:
