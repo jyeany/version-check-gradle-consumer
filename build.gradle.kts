@@ -7,7 +7,7 @@ plugins {
 
 val groupId = "com.example"
 val artifactId = "calculator"
-val versionNumber = "0.0.3"
+val versionNumber = "0.0.4"
 
 group = groupId
 version = versionNumber
