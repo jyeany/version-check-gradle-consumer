@@ -22,7 +22,7 @@ jobs:
 
       - name: Check if Package Version Published
         id: version_check
-        uses: jyeany/version-check-gradle@0.0.23
+        uses: jyeany/version-check-gradle@1.0.2
         with:
           access-token: ${{ secrets.PUBLISH_PACKAGES_PAT }}
 
